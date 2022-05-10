@@ -13,4 +13,11 @@ class LandingPageController extends Controller
             'jobs' => JobApplication::all(),
         ]);
     }
+
+    public function detail($id)
+    {
+        return response()->json([
+            'data' => JobApplication::find($id),
+        ]);
+    }
 }

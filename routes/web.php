@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApplyJobController;
 use App\Http\Controllers\LandingPageController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,4 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [LandingPageController::class, 'index']);
+Route::get('/', [LandingPageController::class, 'index'])->name('landing_page.index');
+Route::get('job/{id}/detail', [LandingPageController::class, 'detail'])->name('landing_page.detail');
+
+Route::get('apply/{id}', [ApplyJobController::class, 'index'])->name('apply_job.index');
+Route::post('apply', [ApplyJobController::class, 'post'])->name('apply_job.post');

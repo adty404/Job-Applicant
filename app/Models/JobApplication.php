@@ -18,4 +18,9 @@ class JobApplication extends Model
         'thumbnail',
         'description',
     ];
+
+    public function applyJob()
+    {
+        return $this->hasMany(ApplyJob::class);
+    }
 }
